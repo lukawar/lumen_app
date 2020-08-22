@@ -1,10 +1,15 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Vuetify from 'vuetify';
+import app from './app.vue';
+import 'vuetify/dist/vuetify.min.css';
 
 Vue.use(VueRouter);
+Vue.use(Vuetify);
+Vue.component('app', app);
 
-const Foo = {template: '<div>foo</div>'}
-const Bar = {template: '<div>bar</div>'}
+const Foo = {template: '<div>foot</div>'}
+const Bar = {template: '<div>bart</div>'}
 
 const router = new VueRouter({
     mode: 'history',
@@ -16,5 +21,8 @@ const router = new VueRouter({
 });
 
 new Vue({
-    router
+    router,
+    render: h => h(app),
+    components: { app },
+    vuetify: new Vuetify()
 }).$mount('#app');
