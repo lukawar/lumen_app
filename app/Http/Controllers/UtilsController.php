@@ -2,22 +2,15 @@
 
 namespace App\Http\Controllers;
 
-class WizardController extends Controller
+/**
+ * @group  Utils
+ *
+ * APIs for managing data
+ */
+class UtilsController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
-
-    /**
      * Return states list
-     *
-     * @group  Get responses
      *
      * @return response
      */
@@ -33,8 +26,7 @@ class WizardController extends Controller
             'województwo mazowieckie',
             'województwo opolskie'
         ];
-        return Response::json($states);
+        return response()->json($states);
     }
 
 }
-

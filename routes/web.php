@@ -11,13 +11,16 @@
 |
 */
 
-$router->group(['prefix' => 'api'], function ($router) {
-
-    $router->get('/example', 'ExampleController@show');
-    $router->get('/second-example', 'ExampleController@showAnother');
-
-});
-
-$router->get('/{route:.*}/', function ()  {
+$router->get('/', function ()  {
     return view('app');
 });
+
+$router->group(['prefix' => 'api'], function ($router) {
+    $router->get('/utils/states', 'UtilsController@getStatesList');
+    $router->get('/states/list', 'WizardController@getStatesList');
+
+});
+
+/*$router->get('/{route:.*}/', function ()  {
+    return view('app');
+});*/

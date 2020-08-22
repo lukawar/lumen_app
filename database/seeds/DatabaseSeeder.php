@@ -1,4 +1,4 @@
-<?php
+composer require mpociot/laravel-apidoc-generator<?php
 
 use Illuminate\Database\Seeder;
 
