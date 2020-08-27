@@ -17,6 +17,8 @@ $router->get('/', function ()  {
 
 $router->group(['prefix' => 'api'], function ($router) {
     $router->get('/utils/states', 'UtilsController@getStatesList');
+    $router->post('/utils/mixed', 'UtilsController@getMixedString');
+    $router->get('/utils/uuid', 'UtilsController@getUUID');
     $router->get('/states/list', 'WizardController@getStatesList');
 
 });
